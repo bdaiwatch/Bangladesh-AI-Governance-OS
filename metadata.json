@@ -1,0 +1,6 @@
+{
+  "name": "BD AI WATCH — National AI Governance Operating System",
+  "description": "Complete National AI Policy, Governance, Readiness, Research, Risk Management, Implementation and Intelligence Operating System with 20 interconnected modules.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

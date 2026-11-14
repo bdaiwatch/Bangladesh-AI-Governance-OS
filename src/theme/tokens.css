@@ -1,0 +1,214 @@
+/* BD AI Watch — Atlas AI Institute Editorial Design Tokens */
+:root {
+  /* Single Brand Accent */
+  --bd-green: #0B5D45;
+  --bd-green-hover: #084734;
+  --bd-green-dark: #073B2B;
+  --bd-green-soft: #ECF4F1;
+
+  /* Status Colours (Status only: Red #B42318, Amber #9A5B00, Blue #2E5E8C) */
+  --status-red: #B42318;
+  --status-red-soft: #FEF2F2;
+  --status-amber: #9A5B00;
+  --status-amber-soft: #FEF7E6;
+  --status-blue: #2E5E8C;
+  --status-blue-soft: #EFF6FC;
+
+  /* Editorial Surfaces & 1px Hairline Borders */
+  --bg-page: #FAFAF7;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F3F3EE;
+  --bg-zebra: #FAFBF8;
+  --border-default: #E6E6E0;
+  --border-strong: #D0D0C8;
+
+  /* Ink & Secondary Typography */
+  --text-primary: #14181B;
+  --text-secondary: #667085;
+  --text-muted: #667085;
+
+  /* Typography Families */
+  --font-serif: 'Source Serif 4', 'Noto Serif Bengali', Georgia, serif;
+  --font-sans: 'Inter', 'Hind Siliguri', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Radii & Zero-Shadow Editorial Discipline */
+  --radius-card: 12px;
+  --radius-button: 10px;
+  --shadow-card: none;
+  --shadow-header: none;
+}
+
+.dark {
+  --bd-green: #157F5E;
+  --bd-green-hover: #0B5D45;
+  --bd-green-dark: #062D21;
+  --bd-green-soft: rgba(21, 127, 94, 0.18);
+
+  --status-red: #F97066;
+  --status-red-soft: rgba(180, 35, 24, 0.22);
+  --status-amber: #F59E0B;
+  --status-amber-soft: rgba(154, 91, 0, 0.24);
+  --status-blue: #60A5FA;
+  --status-blue-soft: rgba(46, 94, 140, 0.24);
+
+  --bg-page: #111315;
+  --bg-surface: #181B1E;
+  --bg-subtle: #202428;
+  --bg-zebra: #1B1E22;
+  --border-default: #2A2E33;
+  --border-strong: #3A4047;
+
+  --text-primary: #F3F4F6;
+  --text-secondary: #98A2B3;
+  --text-muted: #98A2B3;
+
+  --shadow-card: none;
+  --shadow-header: none;
+}
+
+.lang-bn {
+  --font-serif: 'Noto Serif Bengali', 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Hind Siliguri', 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 24px;
+    overflow-x: hidden;
+  }
+
+  .lang-bn body,
+  .lang-bn {
+    line-height: 1.7;
+  }
+
+  .font-serif-editorial {
+    font-family: var(--font-serif);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--bd-green);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes slideDownMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDownMenu 200ms ease-out forwards;
+}
+
+@keyframes slideUpMenu {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpMenu 200ms ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Subtle editorial scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Print-friendly one-column editorial report */
+@media print {
+  aside,
+  header,
+  nav[aria-label="Section navigation"],
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #14181B !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  main {
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .print-one-col {
+    display: block !important;
+  }
+
+  .print-one-col > * {
+    margin-bottom: 16px !important;
+  }
+
+  section {
+    box-shadow: none !important;
+    border-color: #E6E6E0 !important;
+    break-inside: avoid;
+  }
+}
+
+.print-only {
+  display: none;
+}
